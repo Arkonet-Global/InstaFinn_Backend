@@ -6,8 +6,8 @@ export const newUserValidator = (req, res, next) => {
       address: Joi.string().required(),
       pin: Joi.string().required(),
       email: Joi.string().email().required(),
-      mobileNumber: Joi.string().required()
-    role: Joi.string().valid('masterAdmin', 'admin', 'agent', 'subUser', 'bank', 'applicant').required()
+      mobileNumber: Joi.string().required(),
+      role: Joi.string().valid('masterAdmin', 'admin', 'agent', 'subUser', 'bank', 'applicant').required()
     });
   const { error, value } = schema.validate(req.body);
   if (error) {

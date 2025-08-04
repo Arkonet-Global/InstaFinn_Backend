@@ -676,6 +676,27 @@ export const processLoanDecision = async ({ loanId, isAccepted, approvedAmount, 
 
   await decision.save();
 
+  // 🟡 Update application status
+  if (isAccepted) {
+    app.status = 'inprogress';
+    app.approvedAmount = approvedAmount;
+    app.interestRate = interestRate;
+  } else {
+    if (rejectionReason && rejectionReason.trim().length > 0) {
+      app.status = 'inprogress'; // Treat as Rework
+      app.rejectionMessage = rejectionReason;
+    } else {
+      app.status = 'rejected';
+      app.rejectionMessage = null;
+    }
+  }
+
+  
+
+  app.bankDecisionBy = userId;
+  app.decisionAt = new Date();
+  await app.save();
+
   // Notify agent & sub-agent
   const agentsToNotify = [];
   if (app.agentId) agentsToNotify.push(app.agentId);
@@ -689,7 +710,7 @@ export const processLoanDecision = async ({ loanId, isAccepted, approvedAmount, 
       type: isAccepted ? 'loan_approved' : 'loan_rejected',
       message: isAccepted
         ? `Bank decision: loan #${loanId} approved`
-        : `Bank decision: loan #${loanId} rejected - ${rejectionReason}`,
+        : `Bank decision: loan #${loanId} rejected${rejectionReason ? ' - ' + rejectionReason : ''}`,
       date: new Date(),
     });
     await usr.save();
