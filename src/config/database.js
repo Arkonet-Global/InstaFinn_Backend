@@ -16,7 +16,12 @@ const database = async () => {
     //   useUnifiedTopology: true
     // });
 
-    await mongoose.connect(DATABASE);
+    await mongoose.connect(DATABASE, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    
+    // await mongoose.connect(DATABASE);
     
     logger.info('Connected to the database.');
   } catch (error) {
