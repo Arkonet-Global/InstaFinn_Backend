@@ -32,10 +32,10 @@ export const getUserById = async (req, res) => {
 
 //  Login Controller (OTP Based)
 export const loginController = async (req, res) => {
-    const { mobileNumber, otp } = req.body;
+    const { email, otp } = req.body;
 
     try {
-        const {user, token} = await verifyOTPService(mobileNumber, otp);
+        const {user, token} = await verifyOTPService(email, otp);
         res.status(200).json({ message: 'User logged in successfully', token, user });
 
     } catch (error) {
@@ -43,27 +43,46 @@ export const loginController = async (req, res) => {
     }
 };
 // Controller for sending OTP
+// export const sendOTPController = async (req, res) => {
+//     const { mobileNumber,otp } = req.body;
+
+//     try {
+//         const { otp, mobileNumber: userMobileNumber } = await sendOTPService(mobileNumber);
+//         res.status(200).json({ message: 'OTP sent successfully', mobileNumber: userMobileNumber, otp: otp }); //  IMPORTANT:  Do NOT send the OTP back in the response in a real application
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+// };
+
+// sendOTPController
 export const sendOTPController = async (req, res) => {
-    const { mobileNumber,otp } = req.body;
+    const { email } = req.body;
+    console.log("📩 Incoming email for OTP:", email);
 
     try {
-        const { otp, mobileNumber: userMobileNumber } = await sendOTPService(mobileNumber);
-        res.status(200).json({ message: 'OTP sent successfully', mobileNumber: userMobileNumber, otp: otp }); //  IMPORTANT:  Do NOT send the OTP back in the response in a real application
+        const result = await sendOTPService(email);
+        res.status(200).json({ message: 'OTP sent successfully', emailSent: result.emailSent });
     } catch (error) {
+        console.error("❌ sendOTPController error:", error);
         res.status(500).json({ message: error.message });
     }
 };
+
 
 // Controller for resending OTP
 export const resendOTPController = async (req, res) => {
-    const { mobileNumber } = req.body;
+    const { email } = req.body;
     try {
-        const { otp, mobileNumber: userMobileNumber } = await sendOTPService(mobileNumber);
-         res.status(200).json({ message: 'OTP resent successfully', mobileNumber: userMobileNumber,otp: otp }); //  IMPORTANT:  Do NOT send the OTP back in the response in a real application
+        const result = await sendOTPService(email);
+        res.status(200).json({
+            message: 'OTP resent successfully',
+            emailSent: result.emailSent
+        });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
+
 
 // Create a new user
 export const createUser = async (req, res) => {

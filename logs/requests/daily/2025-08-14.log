@@ -1,0 +1,36 @@
+info: ::1 - - [14/Aug/2025:10:41:55 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 401 27 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::1 - - [14/Aug/2025:10:41:56 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 401 27 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::1 - - [14/Aug/2025:10:47:09 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 200 63 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::1 - - [14/Aug/2025:10:47:17 +0000] "POST /instaFinn/users/login HTTP/1.1" 401 46 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::ffff:127.0.0.1 - - [14/Aug/2025:10:51:06 +0000] "POST /instaFinn/users HTTP/1.1" 201 559 "-" "Thunder Client (https://www.thunderclient.com)"
+
+info: ::1 - - [14/Aug/2025:10:52:55 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 500 34 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::1 - - [14/Aug/2025:10:53:20 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 500 34 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::1 - - [14/Aug/2025:11:00:49 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 500 34 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::ffff:127.0.0.1 - - [14/Aug/2025:11:02:39 +0000] "POST /instaFinn/users HTTP/1.1" 500 51 "-" "Thunder Client (https://www.thunderclient.com)"
+
+info: ::ffff:127.0.0.1 - - [14/Aug/2025:11:03:04 +0000] "POST /instaFinn/users HTTP/1.1" 201 563 "-" "Thunder Client (https://www.thunderclient.com)"
+
+info: ::1 - - [14/Aug/2025:11:03:24 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::ffff:127.0.0.1 - - [14/Aug/2025:11:04:37 +0000] "GET /instaFinn/users HTTP/1.1" 404 47 "-" "Thunder Client (https://www.thunderclient.com)"
+
+info: ::ffff:127.0.0.1 - - [14/Aug/2025:11:05:07 +0000] "POST /instaFinn/users HTTP/1.1" 500 51 "-" "Thunder Client (https://www.thunderclient.com)"
+
+info: ::ffff:127.0.0.1 - - [14/Aug/2025:11:05:25 +0000] "POST /instaFinn/users HTTP/1.1" 500 51 "-" "Thunder Client (https://www.thunderclient.com)"
+
+info: ::ffff:127.0.0.1 - - [14/Aug/2025:11:24:21 +0000] "POST /instaFinn/users HTTP/1.1" 201 553 "-" "Thunder Client (https://www.thunderclient.com)"
+
+info: ::1 - - [14/Aug/2025:11:24:41 +0000] "POST /instaFinn/users/login HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::1 - - [14/Aug/2025:11:24:59 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+
+info: ::1 - - [14/Aug/2025:12:33:14 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+

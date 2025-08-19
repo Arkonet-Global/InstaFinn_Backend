@@ -6,6 +6,8 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import config from '../config/config'; //  configure your JWT secret and other settings
 import { generateOTP } from '../middlewares/validation.middleware';
+const { sendVerificationEmail } = require('./email.service');
+
 
 // Utility function for generating JWT
 const generateToken = (userId) => {
@@ -88,78 +90,131 @@ export const getUserById = async (id) => {
   }
 };
 
-export const findUserByMobileNumber = async (mobileNumber) => {
-  console.log(mobileNumber);
-  try {
-    if (!mobileNumber) {
-      throw new Error('Invalid mobileNumber');
-    }
-    const user = await User.findOne({ mobileNumber }); // ✅ Use findOne instead of find
-    console.log(user);
-    if(!user){
-      throw new Error('Invalid mobileNumber');
-    }
-    const otp = generateOTP();
-    const now = new Date();
-    const otpExpiry = new Date(now.getTime() + 5 * 60 * 1000); // OTP expires in 5 minutes
+// export const findUserByMobileNumber = async (mobileNumber) => {
+//   console.log(mobileNumber);
+//   try {
+//     if (!mobileNumber) {
+//       throw new Error('Invalid mobileNumber');
+//     }
+//     const user = await User.findOne({ mobileNumber }); // ✅ Use findOne instead of find
+//     console.log(user);
+//     if(!user){
+//       throw new Error('Invalid mobileNumber');
+//     }
+//     const otp = generateOTP();
+//     const now = new Date();
+//     const otpExpiry = new Date(now.getTime() + 5 * 60 * 1000); // OTP expires in 5 minutes
 
-    user.otp = otp;
-    user.otpExpiry = otpExpiry;
-    await user.save();
-    return { user, otp };
-  } catch (error) {
-    console.error('Error finding user by mobileNumber:', error);
-    throw error;
-  }
+//     user.otp = otp;
+//     user.otpExpiry = otpExpiry;
+//     await user.save();
+//     return { user, otp };
+//   } catch (error) {
+//     console.error('Error finding user by mobileNumber:', error);
+//     throw error;
+//   }
+// };
+
+export const findUserByEmail = async (email) => {
+  if (!email) throw new Error('Invalid email');
+
+  const user = await User.findOne({ email });
+  if (!user) throw new Error('Invalid email');
+
+  const otp = generateOTP();
+  const otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
+
+  user.otp = otp;
+  user.otpExpiry = otpExpiry;
+  await user.save();
+
+  return { user, otp };
 };
 
-export const sendOTP = async (mobileNumber) => {
-  const { otp, user } = await findUserByMobileNumber(mobileNumber);
-  if (!user) {
-    throw new Error('Invalid mobileNumber');
-  }
 
-  //  TODO: Send OTP via mobileNumber/SMS.  Replace this with your actual sending mechanism.
-  console.log(`Sending OTP ${otp} to ${mobileNumber}`); // REMOVE THIS LINE IN PRODUCTION
-  //  You would use a service like Twilio, SendGrid, etc.
+// export const sendOTP = async (mobileNumber,email) => {
+//   const { otp, user } = await findUserByMobileNumber(mobileNumber);
+//   if (!user) {
+//     throw new Error('Invalid mobileNumber');
+//   } 
 
-  return { otp, mobileNumber }; // Return OTP and mobileNumber for use in controller
+//   if (email) {
+//     await sendVerificationEmail(email, otp);
+//   }
+
+//   console.log(`📲 OTP ${otp} sent to ${mobileNumber}`);
+//   return { mobileNumber, emailSent: !!email };
+  
+
+//   // //  TODO: Send OTP via mobileNumber/SMS.  Replace this with your actual sending mechanism.
+//   // console.log(`Sending OTP ${otp} to ${mobileNumber}`); // REMOVE THIS LINE IN PRODUCTION
+//   // //  You would use a service like Twilio, SendGrid, etc.
+
+//   // return { otp, mobileNumber }; // Return OTP and mobileNumber for use in controller
+// };
+
+// sendOTPService
+export const sendOTP = async (email) => {
+    console.log("📩 Looking up user by email:", email);
+    const { otp, user } = await findUserByEmail(email); // make sure this exists
+    console.log("✅ User found:", user?._id);
+
+    await sendVerificationEmail(user.email, otp);
+    return { emailSent: true };
 };
 
-export const verifyOTP = async (mobileNumber, otp) => {
-  try {
-    if (!mobileNumber) {
-      throw new Error('Invalid Mobile Number');
-    }
-    const user = await User.findOne({ mobileNumber }); // ✅ Use findOne instead of find
-    if (!user) {
-      throw new Error('Invalid Mobile Number');
-    }
 
-    if (!user.otp) {
-      throw new Error('OTP not sent.  Please request OTP.');
-    }
 
-    if (user.otpExpiry < new Date()) {
-      throw new Error('OTP expired');
-    }
+// export const verifyOTP = async (mobileNumber, otp) => {
+//   try {
+//     if (!mobileNumber) {
+//       throw new Error('Invalid Mobile Number');
+//     }
+//     const user = await User.findOne({ mobileNumber }); // ✅ Use findOne instead of find
+//     if (!user) {
+//       throw new Error('Invalid Mobile Number');
+//     }
 
-    if (otp !== user.otp) {
-      throw new Error('Invalid OTP');
-    }
-    const token = generateToken(user._id);
+//     if (!user.otp) {
+//       throw new Error('OTP not sent.  Please request OTP.');
+//     }
 
-    // Clear OTP after successful verification
-    user.otp = undefined;
-    user.otpExpiry = undefined;
-    await user.save();
-    return { user, token };
-  } catch (error) {
-    throw new Error('Error creating user: ' + error.message);
-  }
-};
+//     if (user.otpExpiry < new Date()) {
+//       throw new Error('OTP expired');
+//     }
+
+//     if (otp !== user.otp) {
+//       throw new Error('Invalid OTP');
+//     }
+//     const token = generateToken(user._id);
+
+//     // Clear OTP after successful verification
+//     user.otp = undefined;
+//     user.otpExpiry = undefined;
+//     await user.save();
+//     return { user, token };
+//   } catch (error) {
+//     throw new Error('Error creating user: ' + error.message);
+//   }
+// };
 
 // Create a new user
+
+export const verifyOTP = async (email, otp) => {
+  const user = await User.findOne({ email });
+  if (!user) throw new Error('Invalid Email');
+  if (!user.otp) throw new Error('OTP not sent');
+  if (user.otpExpiry < new Date()) throw new Error('OTP expired');
+  if (otp !== user.otp) throw new Error('Invalid OTP');
+
+  const token = generateToken(user._id);
+  user.otp = undefined;
+  user.otpExpiry = undefined;
+  await user.save();
+  return { user, token };
+};
+
+
 export const createUser = async (userData) => {
   try {
     const newUser = new User(userData);

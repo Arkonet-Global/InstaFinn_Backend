@@ -30,7 +30,7 @@ bankSchema.pre('save', function (next) {
 });
 
 // Ensure the unique index is created
-bankSchema.index({ bankName: 1 }, { unique: true });
+//bankSchema.index({ bankName: 1 }, { unique: true });
 
 const Bank = mongoose.model('Bank', bankSchema);
 

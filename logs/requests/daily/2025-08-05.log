@@ -504,3 +504,83 @@ info: ::1 - - [05/Aug/2025:14:12:23 +0000] "GET /instaFinn/loans/6890f7808e846e6
 
 info: ::1 - - [05/Aug/2025:14:13:38 +0000] "PUT /instaFinn/loans/6890f7808e846e67b8b1ca65 HTTP/1.1" 200 51 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
 
+info: ::1 - - [05/Aug/2025:15:30:04 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 401 27 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:30:04 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 401 27 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:30:48 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 500 75 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:41:34 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 200 78 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:41:43 +0000] "POST /instaFinn/users/login HTTP/1.1" 200 578 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:41:45 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 200 396 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:41:45 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 200 396 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:41:53 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 21605 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:41:53 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 21605 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:42:04 +0000] "POST /instaFinn/banks/agent/687b693cd219dc532088786a HTTP/1.1" 200 4118 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:42:12 +0000] "GET /instaFinn/loans/6890f7808e846e67b8b1ca65 HTTP/1.1" 200 2300 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:42:12 +0000] "GET /instaFinn/loans/6890f7808e846e67b8b1ca65 HTTP/1.1" 200 2300 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:42:49 +0000] "PUT /instaFinn/loans/6890f7808e846e67b8b1ca65 HTTP/1.1" 200 51 "http://localhost:3001/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:45:26 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 401 27 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:45:26 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 401 27 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:45:44 +0000] "POST /instaFinn/users/otp/send HTTP/1.1" 200 78 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:45:54 +0000] "POST /instaFinn/users/login HTTP/1.1" 200 578 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:45:56 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 200 396 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:45:56 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 200 396 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:46:09 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 21605 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:46:09 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 21605 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:46:13 +0000] "POST /instaFinn/banks/agent/687b693cd219dc532088786a HTTP/1.1" 200 4118 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:46:21 +0000] "GET /instaFinn/loans/6890f7808e846e67b8b1ca65 HTTP/1.1" 200 2300 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:46:21 +0000] "GET /instaFinn/loans/6890f7808e846e67b8b1ca65 HTTP/1.1" 200 2300 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:49:14 +0000] "GET /instaFinn/loans/6890f7808e846e67b8b1ca65 HTTP/1.1" 200 2300 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:58:28 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:58:28 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:59:19 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 21605 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:15:59:19 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 21605 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:04:07 +0000] "POST /instaFinn/loans HTTP/1.1" 201 940 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:05:20 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 24097 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:05:20 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 24097 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:08:47 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 24097 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:08:50 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 200 396 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:08:50 +0000] "GET /instaFinn/other/applicationStatus HTTP/1.1" 200 396 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:08:51 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 24097 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:08:51 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 24097 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:09:02 +0000] "GET /instaFinn/users/below/687b693cd219dc532088786a HTTP/1.1" 200 703 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:09:06 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 24097 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+info: ::1 - - [05/Aug/2025:16:09:06 +0000] "GET /instaFinn/loans/visible HTTP/1.1" 200 24097 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+

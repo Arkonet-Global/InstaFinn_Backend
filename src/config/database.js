@@ -9,12 +9,15 @@ const database = async () => {
         ? process.env.DATABASE_TEST
         : process.env.DATABASE;
 
-    await mongoose.connect(DATABASE, {
-      useFindAndModify: false,
-      useCreateIndex: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
+    // await mongoose.connect(DATABASE, {
+    //   useFindAndModify: false,
+    //   useCreateIndex: true,
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true
+    // });
+
+    await mongoose.connect(DATABASE);
+    
     logger.info('Connected to the database.');
   } catch (error) {
     logger.error('Could not connect to the database.', error);
