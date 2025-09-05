@@ -84,15 +84,17 @@ export const validateCreateUser = (req, res, next) => {
 
 
 //Joi Validation Schema
-// const validateLoginSchema = Joi.object({
-//   mobileNumber: Joi.string().required(),
-//   otp: Joi.string().min(6).max(6).required() // OTP is required for OTP login
-// }).required();
-
 const validateLoginSchema = Joi.object({
-  email : Joi.string().required(),
-  otp: Joi.string().min(6).max(6).required()
+  mobileNumber: Joi.string()
+    .pattern(/^[0-9]{10}$/)
+    .required(), // Assuming mobile number is 10 digits
+  otp: Joi.string().min(6).max(6).required() // OTP is required for OTP login
 }).required();
+
+// const validateLoginSchema = Joi.object({
+//   email : Joi.string().required(),
+//   otp: Joi.string().min(6).max(6).required()
+// }).required();
 
 
 export const validateLoginCredentials = (req, res, next) => {

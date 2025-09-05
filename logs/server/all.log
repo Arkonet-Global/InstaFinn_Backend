@@ -5198,3 +5198,7 @@ info: Server started at http://localhost:8000/instaFinn/ {"timestamp":"2025-08-1
 info: Connected to the database. {"timestamp":"2025-08-15T08:29:35.684Z"}
 info: Server started at http://localhost:8000/instaFinn/ {"timestamp":"2025-08-15T09:31:39.553Z"}
 info: Connected to the database. {"timestamp":"2025-08-15T09:31:39.671Z"}
+info: Server started at http://localhost:8000/instaFinn/ {"timestamp":"2025-08-22T06:52:32.543Z"}
+info: Connected to the database. {"timestamp":"2025-08-22T06:52:32.611Z"}
+info: Server started at http://localhost:8000/instaFinn/ {"timestamp":"2025-09-05T08:29:43.213Z"}
+info: Connected to the database. {"timestamp":"2025-09-05T08:29:43.331Z"}

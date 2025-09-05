@@ -30,18 +30,21 @@ export const getUserById = async (req, res) => {
     }
 };
 
+
 //  Login Controller (OTP Based)
-export const loginController = async (req, res) => {
-    const { email, otp } = req.body;
+// export const loginController = async (req, res) => {
+//     const { email, otp } = req.body;
 
-    try {
-        const {user, token} = await verifyOTPService(email, otp);
-        res.status(200).json({ message: 'User logged in successfully', token, user });
+//     try {
+//         const {user, token} = await verifyOTPService(email, otp);
+//         res.status(200).json({ message: 'User logged in successfully', token, user });
 
-    } catch (error) {
-        res.status(401).json({ message: error.message }); //  Use 401 for authentication errors
-    }
-};
+//     } catch (error) {
+//         res.status(401).json({ message: error.message }); //  Use 401 for authentication errors
+//     }
+// };
+
+
 // Controller for sending OTP
 // export const sendOTPController = async (req, res) => {
 //     const { mobileNumber,otp } = req.body;
@@ -55,34 +58,66 @@ export const loginController = async (req, res) => {
 // };
 
 // sendOTPController
+// export const sendOTPController = async (req, res) => {
+//     const { email } = req.body;
+//     console.log("📩 Incoming email for OTP:", email);
+
+//     try {
+//         const result = await sendOTPService(email);
+//         res.status(200).json({ message: 'OTP sent successfully', emailSent: result.emailSent });
+//     } catch (error) {
+//         console.error("❌ sendOTPController error:", error);
+//         res.status(500).json({ message: error.message });
+//     }
+// };
+
+export const loginController = async (req, res) => {
+    const { mobileNumber, otp } = req.body;
+    try {
+        const { user, token } = await verifyOTPService(mobileNumber, otp);
+        res.status(200).json({ message: 'User logged in successfully', token, user });
+    } catch (error) {
+        res.status(401).json({ message: error.message }); // Use 401 for authentication errors
+    }
+};
+
 export const sendOTPController = async (req, res) => {
-    const { email } = req.body;
-    console.log("📩 Incoming email for OTP:", email);
+    const { mobileNumber } = req.body;
+    console.log("📩 Incoming mobile number for OTP:", mobileNumber);
 
     try {
-        const result = await sendOTPService(email);
-        res.status(200).json({ message: 'OTP sent successfully', emailSent: result.emailSent });
+        const result = await sendOTPService(mobileNumber);
+        res.status(200).json({ message: 'OTP sent successfully', mobileNumber: result.mobileNumber });
     } catch (error) {
         console.error("❌ sendOTPController error:", error);
         res.status(500).json({ message: error.message });
     }
 };
 
-
 // Controller for resending OTP
+// export const resendOTPController = async (req, res) => {
+//     const { email } = req.body;
+//     try {
+//         const result = await sendOTPService(email);
+//         res.status(200).json({
+//             message: 'OTP resent successfully',
+//             emailSent: result.emailSent
+//         });
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+// };
+
 export const resendOTPController = async (req, res) => {
-    const { email } = req.body;
+    const { mobileNumber } = req.body;
     try {
-        const result = await sendOTPService(email);
-        res.status(200).json({
-            message: 'OTP resent successfully',
-            emailSent: result.emailSent
-        });
+        await resendOTPService(mobileNumber);
+        res.status(200).json({ message: 'OTP resent successfully' });
+           
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
-
 
 // Create a new user
 export const createUser = async (req, res) => {

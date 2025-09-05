@@ -6,49 +6,9 @@
     "auditLog": "logs\\server\\daily\\.66f9134d6120569f739e98c9ffd0130985b9b2a5-audit.json",
     "files": [
         {
-            "date": 1754066683720,
-            "name": "logs\\server\\daily\\2025-08-01.log",
-            "hash": "34638e3cec92198c1e5dc27f9eef111c2924fd984038afd79b141a251c1f99eb"
-        },
-        {
-            "date": 1754206787940,
-            "name": "logs\\server\\daily\\2025-08-03.log",
-            "hash": "48f007b22297a9b9afaf81cbd3826ede512f5fcfdc26375a9277a3e9437c171d"
-        },
-        {
-            "date": 1754327215274,
-            "name": "logs\\server\\daily\\2025-08-04.log",
-            "hash": "0450a93af2bd04b13ef43e98e90798690d84a161335c0d62a006869125546924"
-        },
-        {
-            "date": 1754332929703,
-            "name": "logs\\server\\daily\\2025-08-05.log",
-            "hash": "fbe8a76f8c3b526dc31c6f50b9e2c9944635b17e4f0f0684d72e2a97b4b74695"
-        },
-        {
-            "date": 1754453237154,
-            "name": "logs\\server\\daily\\2025-08-06.log",
-            "hash": "a5dea9371cf4f3440f765418022d8564c5dc32ffc71bd979f591c8ffc95b6558"
-        },
-        {
-            "date": 1754663238778,
-            "name": "logs\\server\\daily\\2025-08-08.log",
-            "hash": "f21ab52c66ebccad0b97a8113fa7b219267aaecc8204460df6a528a19569ba2e"
-        },
-        {
-            "date": 1754922790770,
-            "name": "logs\\server\\daily\\2025-08-11.log",
-            "hash": "9babcc6462a5cfec36b7458d880d9b2fdfdb25c043e5d3e0faae8054740142e6"
-        },
-        {
-            "date": 1755164566235,
-            "name": "logs\\server\\daily\\2025-08-14.log",
-            "hash": "a1ae2ada09fdfa6411e37eced6e4f4ed866fdfcb0ae7498baa05165d4e2ef5fd"
-        },
-        {
-            "date": 1755238119558,
-            "name": "logs\\server\\daily\\2025-08-15.log",
-            "hash": "5193e897be80208ef025cfa93fa2d6e7b6bce7de730f2d9e7a960db810d3b8fa"
+            "date": 1757060982947,
+            "name": "logs\\server\\daily\\2025-09-05.log",
+            "hash": "bca7939c3db25335d921855ae15cb5471aa2cab0241985afc8978af21ed1e926"
         }
     ],
     "hashType": "sha256"
